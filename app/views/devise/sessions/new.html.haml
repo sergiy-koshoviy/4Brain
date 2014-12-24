@@ -37,7 +37,7 @@
   %h5.text-center - Or sign in using -
   %ul.list-inline.text-center
     %li
-      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-circle' do
+      = link_to '#', class: 'btn btn-primary btn-circle', id: 'sign_in_with_fb' do
         %i.fa.fa-facebook
     %li
       = link_to user_omniauth_authorize_path(:google_oauth2), class: 'btn btn-info btn-circle' do

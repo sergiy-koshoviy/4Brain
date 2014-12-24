@@ -234,12 +234,13 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require "omniauth-facebook"
-  config.omniauth :facebook, "FACEBOOK_APP_ID", "FACEBOOK_APP_SECRET"
+
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
   require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, "GOOGLE_APP_ID", "GOOGLE_APP_SECRET",
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET'],
                   { access_type: "offline", approval_prompt: "" }
   require 'omniauth-twitter'
-  config.omniauth :twitter ,"TWITTER_APP_ID", "TWITTER_APP_SECRET"
+  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

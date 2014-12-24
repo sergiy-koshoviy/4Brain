@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require generals
 //= require bootstrap/bootstrap
+//= require facebook
