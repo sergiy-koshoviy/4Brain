@@ -8,6 +8,7 @@
 /.bundle
 #Gemfile.lock
 application.yml
+database.yml
 
 # Ignore the configure database.
 config/database.yml
