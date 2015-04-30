@@ -1,4 +1,10 @@
-hello
-- if user_signed_in?
-  %li
-    = link_to('Logout', destroy_user_session_path, :method => :delete)
+.col-lg-12
+  .row
+    .col-lg-12
+      %h1 dashboard
+  .row
+    .col-lg-12
+      %ul.list_category
+        - Sport.all.each do |sport|
+          %li.cake
+            = link_to sport.name, sport

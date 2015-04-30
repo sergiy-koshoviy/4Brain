@@ -9,5 +9,18 @@
     %link{:href => '/assets/brain-logo-480x349.png', :rel => "shortcut icon", :type => "image/x-icon"}/
 
   %body
-    = yield
+    .row
+      = render 'layouts/header'
+    .row
+      .col-lg-2
+        .row
+          = render 'layouts/left_panel'
+      .col-lg-8
+        .row
+          = yield
+      .col-lg-2
+        .row
+          = render 'layouts/right_panel'
+    .row
+      = render 'layouts/footer'
 

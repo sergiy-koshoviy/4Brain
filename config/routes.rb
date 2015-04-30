@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :sports
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get '/auth/:provider/callback', to: 'users/omniauth_callbacks#facebook'

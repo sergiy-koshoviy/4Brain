@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @sport.name
+%p
+  %b Uid:
+  = @sport.uid
+%p
+  %b Description:
+  = @sport.description
+
+= link_to 'Edit', edit_sport_path(@sport)
+\|
+= link_to 'Back', sports_path
