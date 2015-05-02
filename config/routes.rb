@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :sports
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get '/auth/:provider/callback', to: 'users/omniauth_callbacks#facebook'
@@ -11,6 +9,11 @@ Rails.application.routes.draw do
   root 'generals#homepage'
 
   resource :generals
+  resources :sports do
+    member do
+      get 'panel'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

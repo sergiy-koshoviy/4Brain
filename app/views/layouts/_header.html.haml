@@ -1,3 +1,4 @@
-.col-lg-12
-  - if user_signed_in?
-    = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'pull-right')
+.col-lg-12.header
+  .logo
+    LOGO
+  = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'pull-right')

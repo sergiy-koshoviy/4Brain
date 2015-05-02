@@ -1,10 +1,11 @@
 .col-lg-12
   .row
     .col-lg-12
-      %h1 dashboard
+      %h1
+        = 'dashboard'.upcase
   .row
     .col-lg-12
       %ul.list_category
         - Sport.all.each do |sport|
           %li.cake
-            = link_to sport.name, sport
+            = link_to sport.name, panel_sport_path(sport)

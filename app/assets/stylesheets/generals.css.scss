@@ -1,6 +1,16 @@
 // Place all the styles related to the Generals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  height: 70px;
+  padding: 20px 40px;
+
+  .logo {
+    padding: 20px;
+    display: inline-block;
+  }
+}
+
 ul.list_category {
   list-style-type: none;
   li.cake {

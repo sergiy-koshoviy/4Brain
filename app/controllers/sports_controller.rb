@@ -36,6 +36,10 @@ class SportsController < ApplicationController
     respond_with(@sport)
   end
 
+  def panel
+    respond_with(@sport)
+  end
+
   private
     def set_sport
       @sport = Sport.find_by_uid(params[:id])
