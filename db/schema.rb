@@ -11,12 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430214602) do
+ActiveRecord::Schema.define(version: 20150502193640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "competitions", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "generals", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "protocol_wl_competitions", force: true do |t|
+    t.integer  "competition_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "birthday"
+    t.string   "address"
+    t.integer  "class_id"
+    t.string   "sex"
+    t.decimal  "first_snatch"
+    t.decimal  "second_snatch"
+    t.decimal  "third_snatch"
+    t.decimal  "result_snatch"
+    t.decimal  "first_jerk"
+    t.decimal  "second_jerk"
+    t.decimal  "third_jerk"
+    t.decimal  "result_jerk"
+    t.decimal  "total_result"
+    t.integer  "place"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

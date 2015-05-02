@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'generals#homepage'
 
   resource :generals
+  resources :competitions
   resources :sports do
     member do
       get 'panel'

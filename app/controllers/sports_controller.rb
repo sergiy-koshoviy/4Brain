@@ -37,6 +37,7 @@ class SportsController < ApplicationController
   end
 
   def panel
+    @competition = Competition.new
     respond_with(@sport)
   end
 
