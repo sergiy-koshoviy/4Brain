@@ -1,1 +1,24 @@
-= @competition.name
+-#= @competition.name
+%table.table.table-bordered.table-hover.protocol
+  %thead
+    %tr
+      %th #
+      %th Ім'я
+      %th Прізвище
+      %th Д.Н.
+      %th Команда
+      %th Розряд
+      %th Вага
+      %th Ривок
+      %th Поштовх
+  %tfoot
+  %tbody
+    - ProtocolWlCompetition.all.each do |sportsman|
+      %th
+      %th = sportsman.first_name
+      %th = sportsman.last_name
+      %th = sportsman.birthday
+      %th = sportsman.address
+      %th = sportsman.class
+      %th = sportsman.first_snatch
+      %th = sportsman.first_jerk
