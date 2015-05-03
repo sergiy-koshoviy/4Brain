@@ -1,11 +1,26 @@
 = form_for @protocol, remote: true do |f|
-  = f.text_field :first_name, placeholder: 'Ім\'я'
-  = f.text_field :last_name, placeholder: 'Прізвище'
-  = f.text_field :birthday, placeholder: 'Дата народження'
-  = f.text_field :address, placeholder: 'Команда'
-  = f.text_field :sex, placeholder: 'Стать'
-  = f.text_field :weight, placeholder: 'Вага'
-  = f.text_field :class_id, placeholder: 'Розряд'
-  = f.text_field :first_snatch, placeholder: 'Ривок'
-  = f.text_field :first_jerk, placeholder: 'Поштовх'
-  = f.submit 'Додати учасника'
+  .row
+    .col-lg-6
+      = f.text_field :first_name, placeholder: 'Ім\'я', class: 'form-control'
+    .col-lg-6
+      = f.text_field :last_name, placeholder: 'Прізвище', class: 'form-control'
+  .row
+    .col-lg-6
+      = f.text_field :address, placeholder: 'Команда', class: 'form-control'
+    .col-lg-6
+      = f.text_field :birthday, placeholder: 'Дата народження', class: 'form-control'
+  .row
+    .col-lg-2
+      = f.text_field :sex, placeholder: 'Стать', class: 'form-control'
+    .col-lg-2
+      = f.text_field :weight, placeholder: 'Вага', class: 'form-control'
+    .col-lg-2
+      = f.text_field :class_id, placeholder: 'Розряд', class: 'form-control'
+    .col-lg-2
+      = f.text_field :first_snatch, placeholder: 'Ривок', class: 'form-control'
+    .col-lg-2
+      = f.text_field :first_jerk, placeholder: 'Поштовх', class: 'form-control'
+    .col-lg-2
+  .row.col-lg-offset-5
+    .col-lg-2
+      = f.submit 'Додати учасника', class: 'btn btn-default'

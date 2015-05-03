@@ -1,4 +1,14 @@
+.row
+  .col-lg-6
+    = select_tag :competition_id,
+     options_from_collection_for_select(Competition.all, 'id', 'name'),
+     include_blank: true,
+     class: 'form-control',
+     placeholder: 'Обрати поточні змагання'
+  .col-lg-6
+    %input{type: "button", class:"btn btn-success", value:'Створити змагання'}
+
 = form_for @competition, remote: true do |f|
-  = f.text_field :name, placeholder: 'Назва змагань'
-  = f.text_field :address, placeholder: 'Адреса змагань'
-  = f.submit 'Створити Змагання'
+  = f.text_field :name, placeholder: 'Назва змагань', class: 'form-control'
+  = f.text_field :address, placeholder: 'Адреса змагань', class: 'form-control'
+  = f.submit 'Створити Змагання', class: 'btn btn-default'
