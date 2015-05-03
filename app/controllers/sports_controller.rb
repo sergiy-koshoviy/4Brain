@@ -38,6 +38,7 @@ class SportsController < ApplicationController
 
   def panel
     @competition = Competition.new
+    @protocol = ProtocolWlCompetition.new
     respond_with(@sport)
   end
 

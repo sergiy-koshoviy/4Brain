@@ -1,4 +1,3 @@
--#= @competition.name
 %table.table.table-bordered.table-hover.protocol
   %thead
     %tr
@@ -13,12 +12,24 @@
       %th Поштовх
   %tfoot
   %tbody
-    - ProtocolWlCompetition.all.each do |sportsman|
-      %th
-      %th = sportsman.first_name
-      %th = sportsman.last_name
-      %th = sportsman.birthday
-      %th = sportsman.address
-      %th = sportsman.class
-      %th = sportsman.first_snatch
-      %th = sportsman.first_jerk
+    - ProtocolWlCompetition.all.each_with_index do |sportsman, index|
+      - index = index + 1
+      %tr
+        %th
+          = index
+        %th
+          = sportsman.first_name
+        %th
+          = sportsman.last_name
+        %th
+          = sportsman.birthday
+        %th
+          = sportsman.address
+        %th
+          = sportsman.class_id
+        %th
+          = sportsman.weight
+        %th
+          = sportsman.first_snatch
+        %th
+          = sportsman.first_jerk

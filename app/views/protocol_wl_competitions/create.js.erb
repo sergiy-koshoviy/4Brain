@@ -1,0 +1,6 @@
+var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing')%>";
+var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions')%>";
+
+$('#new_protocol_wl_competition').find("input[type=text], textarea").val("");
+$('.protocol-competitions-container').html(competitions);
+$('.protocol-weighing-container').html(weighing);

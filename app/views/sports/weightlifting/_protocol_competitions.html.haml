@@ -22,20 +22,38 @@
       %th рез.
   %tfoot
   %tbody
-    - ProtocolWlCompetition.all.each do |sportsman|
-      %th
-      %th = sportsman.first_name
-      %th = sportsman.last_name
-      %th = sportsman.birthday
-      %th = sportsman.address
-      %th = sportsman.class
-      %th = sportsman.first_snatch
-      %th = sportsman.second_snatch
-      %th = sportsman.third_snatch
-      %th = sportsman.result_snatch
-      %th = sportsman.first_jerk
-      %th = sportsman.second_jerk
-      %th = sportsman.third_jerk
-      %th = sportsman.result_jerk
-      %th = sportsman.total_result
-      %th = sportsman.place
+    - ProtocolWlCompetition.all.each_with_index do |sportsman, index|
+      - index = index + 1
+      %tr
+        %th
+          = index
+        %th
+          = sportsman.first_name
+        %th
+          = sportsman.last_name
+        %th
+          = sportsman.birthday
+        %th
+          = sportsman.address
+        %th
+          = sportsman.class_id
+        %th
+          = sportsman.first_snatch
+        %th
+          = sportsman.second_snatch
+        %th
+          = sportsman.third_snatch
+        %th
+          = sportsman.result_snatch
+        %th
+          = sportsman.first_jerk
+        %th
+          = sportsman.second_jerk
+        %th
+          = sportsman.third_jerk
+        %th
+          = sportsman.result_jerk
+        %th
+          = sportsman.total_result
+        %th
+          = sportsman.place

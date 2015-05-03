@@ -1,5 +1,5 @@
 class CompetitionsController < ApplicationController
-  # before_action :set_sport, only: [:show, :edit, :update, :destroy]
+  # before_action :set_competition, only: [:show, :edit, :update, :destroy]
 
   def create
     @competition = Competition.create(competition_params)
