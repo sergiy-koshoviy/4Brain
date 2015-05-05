@@ -724,11 +724,23 @@ a {
     }
   }
 }
+.padding-0 {
+  padding: 0;
+}
+
 h2.slide{
   cursor: pointer;
 }
 .protocol{
   td,th {
+    text-align: center;
+  }
+  td {
+    padding: 0 !important;
+  }
+  input {
+    border: none;
+    background: none;
     text-align: center;
   }
 }

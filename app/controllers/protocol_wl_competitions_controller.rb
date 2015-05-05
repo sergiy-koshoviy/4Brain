@@ -1,8 +1,19 @@
 class ProtocolWlCompetitionsController < ApplicationController
-  # before_action :set_protocol, only: [:show, :edit, :update, :destroy]
+  before_action :set_protocol, only: [:update]
 
   def create
     @protocol = ProtocolWlCompetition.create(protocol_params)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def update
+    field = params[:set_param].to_sym
+    data = params[:val_param]
+    @protocol.update_attribute(field, data)
 
     respond_to do |format|
       format.html

@@ -1,0 +1,7 @@
+var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing')%>";
+var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions')%>";
+
+$('.protocol-competitions-container').html(competitions);
+$('.protocol-weighing-container').html(weighing);
+
+saveSportsman();

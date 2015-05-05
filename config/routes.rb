@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resource :generals
   resources :competitions
-  resources :protocol_wl_competitions
+  resources :protocol_wl_competitions do
+    member do
+      get 'update'
+    end
+  end
   resources :sports do
     member do
       get 'panel'

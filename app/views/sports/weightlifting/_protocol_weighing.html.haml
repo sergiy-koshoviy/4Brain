@@ -14,22 +14,22 @@
   %tbody
     - ProtocolWlCompetition.all.each_with_index do |sportsman, index|
       - index = index + 1
-      %tr
-        %th
+      %tr{'data-sportsman-id'=> "#{sportsman.id}" }
+        %td
           = index
-        %th
-          = sportsman.first_name
-        %th
-          = sportsman.last_name
-        %th
-          = sportsman.birthday
-        %th
-          = sportsman.address
-        %th
-          = sportsman.class_id
-        %th
-          = sportsman.weight
-        %th
-          = sportsman.first_snatch
-        %th
-          = sportsman.first_jerk
+        %td
+          = text_field :sportsman, :first_name, :value => sportsman.first_name
+        %td
+          = text_field :sportsman, :last_name, :value => sportsman.last_name
+        %td
+          = text_field :sportsman, :birthday, :value => sportsman.birthday, size: 10
+        %td
+          = text_field :sportsman, :address, :value => sportsman.address
+        %td
+          = text_field :sportsman, :class_id, :value => sportsman.class_id, size: 5
+        %td
+          = text_field :sportsman, :weight, :value => sportsman.weight, size: 5
+        %td
+          = text_field :sportsman, :first_snatch, :value => sportsman.first_snatch, size: 5
+        %td
+          = text_field :sportsman, :first_jerk, :value => sportsman.first_jerk, size: 5

@@ -6,6 +6,7 @@
       %th{:rowspan => "2"} Прізвище
       %th{:rowspan => "2"} Д.Н.
       %th{:rowspan => "2"} Команда
+      %th{:rowspan => "2"} Вага
       %th{:rowspan => "2"} Розряд
       %th{:colspan => "4"} Ривок
       %th{:colspan => "4"} Поштовх
@@ -25,38 +26,40 @@
   %tbody
     - ProtocolWlCompetition.all.each_with_index do |sportsman, index|
       - index = index + 1
-      %tr
-        %th
+      %tr{'data-sportsman-id'=> "#{sportsman.id}" }
+        %td.padding-8
           = index
-        %th
-          = sportsman.first_name
-        %th
-          = sportsman.last_name
-        %th
-          = sportsman.birthday
-        %th
-          = sportsman.address
-        %th
-          = sportsman.class_id
-        %th
-          = sportsman.first_snatch
-        %th
-          = sportsman.second_snatch
-        %th
-          = sportsman.third_snatch
-        %th
-          = sportsman.result_snatch
-        %th
-          = sportsman.first_jerk
-        %th
-          = sportsman.second_jerk
-        %th
-          = sportsman.third_jerk
-        %th
-          = sportsman.result_jerk
-        %th
+        %td
+          = text_field :sportsman, :first_name, :value => sportsman.first_name
+        %td
+          = text_field :sportsman, :last_name, :value => sportsman.last_name
+        %td
+          = text_field :sportsman, :birthday, :value => sportsman.birthday, size: 10
+        %td
+          = text_field :sportsman, :address, :value => sportsman.address
+        %td
+          = text_field :sportsman, :weight, :value => sportsman.weight
+        %td
+          = text_field :sportsman, :class_id, :value => sportsman.class_id, size: 5
+        %td
+          = text_field :sportsman, :first_snatch, :value => sportsman.first_snatch, size: 5
+        %td
+          = text_field :sportsman, :second_snatch, :value => sportsman.second_snatch, size: 5
+        %td
+          = text_field :sportsman, :third_snatch, :value => sportsman.third_snatch, size: 5
+        %td
+          = text_field :sportsman, :result_snatch, :value => sportsman.result_snatch, size: 5
+        %td
+          = text_field :sportsman, :first_jerk, :value => sportsman.first_jerk, size: 5
+        %td
+          = text_field :sportsman, :second_jerk, :value => sportsman.second_jerk, size: 5
+        %td
+          = text_field :sportsman, :third_jerk, :value => sportsman.third_jerk, size: 5
+        %td
+          = text_field :sportsman, :result_jerk, :value => sportsman.result_jerk, size: 5
+        %td
           = sportsman.total_result
-        %th
+        %td
           = sportsman.place
-        %th
+        %td
           Виклик

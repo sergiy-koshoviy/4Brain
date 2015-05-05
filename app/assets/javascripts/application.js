@@ -16,3 +16,4 @@
 //= require generals
 //= require bootstrap/bootstrap
 //= require facebook
+//= require sports
