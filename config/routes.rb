@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   root 'generals#homepage'
 
   resource :generals
-  resources :competitions
+  resources :competitions do
+    member do
+      get 'load_competition'
+    end
+  end
   resources :protocol_wl_competitions do
     member do
       get 'update'

@@ -2,6 +2,8 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
   saveSportsman();
+  selectCompetition();
+  btnNewCompetition();
 });
 
 function saveSportsman() {
@@ -19,4 +21,24 @@ function saveSportsman() {
       }
     })
   });
+}
+
+function selectCompetition() {
+  $('#competition_id').change(function(){
+    var id = $(this).val();
+
+    $.ajax({
+      url: '/competitions/'+id+'/load_competition',
+      dataType: 'script',
+      data: {
+        id: id
+      }
+    })
+  });
+}
+
+function btnNewCompetition(){
+  $('.js-btn-toggle').on('click', function(){
+    $('.js-block-toggle').toggle();
+  })
 }

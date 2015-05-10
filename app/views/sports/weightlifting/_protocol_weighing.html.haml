@@ -12,7 +12,7 @@
       %th Поштовх
   %tfoot
   %tbody
-    - ProtocolWlCompetition.all.each_with_index do |sportsman, index|
+    - @protocols.each_with_index do |sportsman, index|
       - index = index + 1
       %tr{'data-sportsman-id'=> "#{sportsman.id}" }
         %td

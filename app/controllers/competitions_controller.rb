@@ -1,8 +1,17 @@
 class CompetitionsController < ApplicationController
-  # before_action :set_competition, only: [:show, :edit, :update, :destroy]
+  before_action :set_competition, only: [:load_competition]
 
   def create
     @competition = Competition.create(competition_params)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def load_competition
+    @protocols = @competition.protocol_wl_competitions
 
     respond_to do |format|
       format.html

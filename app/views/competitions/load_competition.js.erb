@@ -1,0 +1,5 @@
+var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing', locals: {competition: @protocols})%>";
+var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions', locals: {competition: @protocols})%>";
+
+$('.protocol-competitions-container').html(competitions);
+$('.protocol-weighing-container').html(weighing);
