@@ -38,7 +38,7 @@ function selectCompetition() {
 }
 
 function btnNewCompetition(){
-  $('.js-btn-toggle').on('click', function(){
-    $('.js-block-toggle').toggle();
+  $('.js-btn-toggle-new-competition').on('click', function(){
+    $('.js-block-toggle-new-competition').toggle();
   })
 }

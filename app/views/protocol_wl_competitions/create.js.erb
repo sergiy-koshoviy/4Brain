@@ -4,3 +4,6 @@ var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_
 $('#new_protocol_wl_competition').find("input[type=text], textarea").val("");
 $('.protocol-competitions-container').html(competitions);
 $('.protocol-weighing-container').html(weighing);
+$('.js-block-toggle-new-competition').hide();
+
+saveSportsman();

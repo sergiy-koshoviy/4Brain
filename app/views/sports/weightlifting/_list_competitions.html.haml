@@ -1,0 +1,4 @@
+= select_tag :competition_id,
+     options_from_collection_for_select(Competition.all, 'id', 'name', @competition),
+     class: 'form-control',
+     prompt: 'Обрати поточні змагання'

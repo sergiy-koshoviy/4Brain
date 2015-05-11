@@ -3,6 +3,7 @@ class CompetitionsController < ApplicationController
 
   def create
     @competition = Competition.create(competition_params)
+    @protocols = @competition.protocol_wl_competitions
 
     respond_to do |format|
       format.html

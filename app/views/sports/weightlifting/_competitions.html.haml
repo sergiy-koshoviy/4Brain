@@ -1,14 +1,10 @@
 .row
+  #select-competition.col-lg-6
+    = render 'sports/weightlifting/list_competitions'
   .col-lg-6
-    = select_tag :competition_id,
-     options_from_collection_for_select(Competition.all, 'id', 'name'),
-     include_blank: true,
-     class: 'form-control',
-     placeholder: 'Обрати поточні змагання'
-  .col-lg-6
-    %input{type: "button", class:"btn btn-success js-btn-toggle", value:'Створити змагання'}
+    %input{type: 'button', class:'btn btn-success js-btn-toggle-new-competition', value:'Створити змагання'}
 
-= form_for @competition, html: {class: 'js-block-toggle'}, remote: true do |f|
+= form_for @competition, html: {class: 'js-block-toggle-new-competition'}, remote: true do |f|
   = f.text_field :name, placeholder: 'Назва змагань', class: 'form-control'
   = f.text_field :address, placeholder: 'Адреса змагань', class: 'form-control'
   = f.submit 'Створити Змагання', class: 'btn btn-default'

@@ -1,3 +1,10 @@
-var template = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing', locals: {competition: @competition})%>"
+var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing', locals: {competition: @competition})%>",
+    competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions', locals: {competition: @competition})%>";
 
-$('.protocol-weighing-container').html(template);
+$('#new_protocol_wl_competition').find("input[type=text], textarea").val("");
+$('.js-btn-toggle-new-competition').find("input[type=text], textarea").val("");
+$('.protocol-competitions-container').html(competitions);
+$('.protocol-weighing-container').html(weighing);
+$('.js-block-toggle-new-competition').hide();
+
+saveSportsman();

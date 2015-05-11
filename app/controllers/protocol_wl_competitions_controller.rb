@@ -14,6 +14,7 @@ class ProtocolWlCompetitionsController < ApplicationController
     field = params[:set_param].to_sym
     data = params[:val_param]
     @protocol.update_attribute(field, data)
+    @protocols = @protocol.competition.protocol_wl_competitions
 
     respond_to do |format|
       format.html
