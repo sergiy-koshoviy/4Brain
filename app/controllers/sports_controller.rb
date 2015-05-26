@@ -39,6 +39,8 @@ class SportsController < ApplicationController
   def panel
     @competition = Competition.new
     @protocol = ProtocolWlCompetition.new
+    @athletic_categories = {}
+    AthleteCategory.all.each{|c| @athletic_categories[c.name] = c.id}
     respond_with(@sport)
   end
 

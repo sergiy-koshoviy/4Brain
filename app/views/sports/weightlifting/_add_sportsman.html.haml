@@ -15,7 +15,7 @@
     .col-lg-2
       = f.text_field :weight, placeholder: 'Вага', class: 'form-control'
     .col-lg-2
-      = f.text_field :class_id, placeholder: 'Розряд', class: 'form-control'
+      = f.select :class_id, @athletic_categories, {}, class: 'form-control'
     .col-lg-2
       = f.text_field :first_snatch, placeholder: 'Ривок', class: 'form-control'
     .col-lg-2
