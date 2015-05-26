@@ -11,7 +11,7 @@
       = f.text_field :birthday, placeholder: 'Дата народження', class: 'form-control'
   .row
     .col-lg-2
-      = f.text_field :sex, placeholder: 'Стать', class: 'form-control'
+      = f.select :sex, User::GENDER, {}, class: 'form-control'
     .col-lg-2
       = f.text_field :weight, placeholder: 'Вага', class: 'form-control'
     .col-lg-2

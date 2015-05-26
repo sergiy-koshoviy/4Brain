@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   before_create :do_before_create
 
+  GENDER = {'чоловіча' => 'man', 'жіноча' => 'woman'}
+
   def to_param
     uid
   end
