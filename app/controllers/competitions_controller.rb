@@ -14,6 +14,9 @@ class CompetitionsController < ApplicationController
   def load_competition
     @protocols = @competition.protocol_wl_competitions
 
+    Rails.logger.info "Start load competition: #{@competition.name}"
+    Rails.logger.info "Load protocols: #{@protocols.pluck(:id)}"
+
     respond_to do |format|
       format.html
       format.js

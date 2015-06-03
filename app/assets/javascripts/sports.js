@@ -27,18 +27,48 @@ function selectCompetition() {
   $('#competition_id').change(function(){
     var id = $(this).val();
 
-    $.ajax({
-      url: '/competitions/'+id+'/load_competition',
-      dataType: 'script',
-      data: {
-        id: id
-      }
-    })
+    if (!!id) {
+      $('.sportsman-form').removeClass('hide');
+      $('#protocol_wl_competition_competition_id').val(id);
+      $('.protocol-weighing-container').removeClass('hide');
+      $('.protocol-competitions-container').removeClass('hide');
+      $.ajax({
+        url: '/competitions/'+id+'/load_competition',
+        dataType: 'script',
+        data: {
+          id: id
+        },
+        success: function(e){
+        },
+        error:  function(e){
+        }
+      })
+    }else{
+      $('.sportsman-form').addClass('hide');
+      $('#protocol_wl_competition_competition_id').val('');
+      $('.protocol-weighing-container').addClass('hide');
+      $('.protocol-competitions-container').addClass('hide');
+    }
+
   });
 }
 
 function btnNewCompetition(){
   $('.js-btn-toggle-new-competition').on('click', function(){
-    $('.js-block-toggle-new-competition').toggle();
+    var newCompetition = $('.js-block-toggle-new-competition'),
+        selector = $("#competition_id"),
+        isOpen = false;
+
+    $(newCompetition).toggle();
+
+    if ($(newCompetition).is(':visible')) {
+      isOpen = true;
+    }
+
+    if (isOpen) {
+      $(selector).val(0);
+      $(selector).change();
+    }
+
   })
 }

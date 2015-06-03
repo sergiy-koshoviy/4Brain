@@ -3,6 +3,7 @@ class ProtocolWlCompetitionsController < ApplicationController
 
   def create
     @protocol = ProtocolWlCompetition.create(protocol_params)
+    @protocols = @protocol.competition.protocol_wl_competitions
 
     respond_to do |format|
       format.html

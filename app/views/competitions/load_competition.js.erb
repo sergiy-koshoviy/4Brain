@@ -1,8 +1,8 @@
-var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing', locals: {competition: @protocols})%>";
-var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions', locals: {competition: @protocols})%>";
+var weighing = "<%= escape_javascript(render partial: 'sports/weightlifting/protocol_weighing', locals: {protocols: @protocols})%>";
+var competitions = "<%= escape_javascript(render partial: 'sports/weightlifting/protocol_competitions', locals: {protocols: @protocols})%>";
 
 $('.protocol-competitions-container').html(competitions);
 $('.protocol-weighing-container').html(weighing);
 $('.js-block-toggle-new-competition').hide();
 
-saveSportsman();
+//saveSportsman();

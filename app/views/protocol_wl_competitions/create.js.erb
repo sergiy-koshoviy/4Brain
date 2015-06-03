@@ -1,5 +1,5 @@
-var weighing = "<%= escape_javascript(render 'sports/weightlifting/protocol_weighing')%>";
-var competitions = "<%= escape_javascript(render 'sports/weightlifting/protocol_competitions')%>";
+var weighing = "<%= escape_javascript(render partial: 'sports/weightlifting/protocol_weighing', locals: {protocols: @protocols})%>",
+    competitions = "<%= escape_javascript(render partial:  'sports/weightlifting/protocol_competitions', locals: {protocols: @protocols})%>";
 
 $('#new_protocol_wl_competition').find("input[type=text], textarea").val("");
 $('.protocol-competitions-container').html(competitions);

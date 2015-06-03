@@ -1,10 +1,10 @@
 .row
   #select-competition.col-lg-6
-    = render 'sports/weightlifting/list_competitions'
+    = render 'sports/weightlifting/list_competitions', competition: @competition
   .col-lg-6
     %input{type: 'button', class:'btn btn-success js-btn-toggle-new-competition', value:'Створити змагання'}
 
 = form_for @competition, html: {class: 'js-block-toggle-new-competition'}, remote: true do |f|
   = f.text_field :name, placeholder: 'Назва змагань', class: 'form-control'
   = f.text_field :address, placeholder: 'Адреса змагань', class: 'form-control'
-  = f.submit 'Створити Змагання', class: 'btn btn-default'
+  = f.submit 'Зберегти', class: 'btn btn-default'
