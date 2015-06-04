@@ -33,6 +33,8 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 
+gem 'bootstrap-datepicker-rails'
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

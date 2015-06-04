@@ -17,3 +17,4 @@
 //= require bootstrap/bootstrap
 //= require facebook
 //= require sports
+//= require bootstrap-datepicker

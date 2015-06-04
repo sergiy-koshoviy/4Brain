@@ -4,7 +4,7 @@
       %th #
       %th Ім'я
       %th Прізвище
-      %th Д.Н.
+      %th Д.Н. <br/> YYYY-MM-DD
       %th Команда
       %th Розряд
       %th Вага
@@ -22,7 +22,10 @@
         %td
           = text_field :sportsman, :last_name, :value => sportsman.last_name
         %td
-          = text_field :sportsman, :birthday, :value => sportsman.birthday, size: 10
+          = text_field :sportsman,
+           :birthday,
+           :value => sportsman.birthday ? sportsman.birthday.strftime("%F") : nil,
+           size: 10
         %td
           = text_field :sportsman, :address, :value => sportsman.address
         %td
