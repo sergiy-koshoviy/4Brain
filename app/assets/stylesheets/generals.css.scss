@@ -22,3 +22,39 @@ ul.list_category {
     margin: 25px;
   }
 }
+
+.small-clock{
+  .clock.flip-clock-wrapper {
+    margin: 0;
+
+    ul {
+      width: 20px;
+      height: 25px;
+      padding-left: 20px;
+      margin: 0 1px 0 1px;
+
+      li {
+        line-height: 25px;
+
+        a div div.inn {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .flip-clock-divider {
+      height: 35px;
+      width: 15px;
+      .flip-clock-dot.top{
+        top: 5px;
+        width: 5px;
+        height: 5px;
+      }
+      .flip-clock-dot.bottom{
+        top: 15px;
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+}

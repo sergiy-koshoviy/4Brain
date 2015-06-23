@@ -18,3 +18,5 @@
 //= require facebook
 //= require sports
 //= require bootstrap-datepicker
+//= require global
+//= require jquery.flipcountdown
