@@ -57,7 +57,11 @@ function selectCompetition() {
       "paging":         false
     } );
 
-    console.log('wwwwwwwwwwwwwwwwwwwww');
+    $('#weightlifting-competitions').dataTable( {
+      "scrollY":        "100px",
+      "scrollCollapse": true,
+      "paging":         false
+    } );
 
   });
 }
