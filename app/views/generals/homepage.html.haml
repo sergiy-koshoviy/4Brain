@@ -4,8 +4,12 @@
       %h1
         = 'dashboard'.upcase
   .row
+    /TODO add flexible design
     .col-lg-12
       %ul.list_category
         - Sport.all.each do |sport|
-          %li.cake
-            = link_to sport.name, panel_sport_path(sport)
+          %li
+            = link_to panel_sport_path(sport) do
+              .link-container{:style => "background-image: url(assets/sport-icons/#{sport.name}-group.png);"}
+              .link-title
+                = sport.name

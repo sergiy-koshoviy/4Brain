@@ -2,7 +2,8 @@ class Sport < ActiveRecord::Base
 
   has_many :athlete_categories
 
-  validate :uid, presence: true, uniq: true
+  validates :name, presence: true, uniqueness: true
+  validates :uid, presence: true, uniqueness: true
 
   before_create :do_before_create
 

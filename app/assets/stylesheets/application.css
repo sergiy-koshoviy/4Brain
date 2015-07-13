@@ -17,6 +17,6 @@
  *= require generals
  *= require sign_up
  *= require sports
- *= require bootstrap-datepicker
  *= require jquery.flipcountdown
+ *= require jquery.dataTables
  */

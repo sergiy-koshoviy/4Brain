@@ -50,6 +50,15 @@ function selectCompetition() {
       $('.protocol-competitions-container').addClass('hide');
     }
 
+
+    $('#weightlifting-weighing').dataTable( {
+      "scrollY":        "100px",
+      "scrollCollapse": true,
+      "paging":         false
+    } );
+
+    console.log('wwwwwwwwwwwwwwwwwwwww');
+
   });
 }
 

@@ -1,4 +1,6 @@
 .col-lg-12.header
   .logo
-    = link_to 'LOGO', root_path
+    = link_to (image_tag 'logo-3.png'), root_path
+  .panel-icon
+    = yield :head_image
   = link_to('Logout', destroy_user_session_path, :method => :delete, class: 'pull-right')

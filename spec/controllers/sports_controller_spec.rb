@@ -24,11 +24,13 @@ RSpec.describe SportsController, :type => :controller do
   # Sport. As you add validations to Sport, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: "name-#{rand(36**6)}",
+     uid: "uid-#{rand(36**6)}"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: 'weightlifting',
+     uid: 'weightlifting'}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -38,9 +40,11 @@ RSpec.describe SportsController, :type => :controller do
 
   describe "GET index" do
     it "assigns all sports as @sports" do
+      default_sport = Sport.find_by_name('weightlifting')
       sport = Sport.create! valid_attributes
+
       get :index, {}, valid_session
-      expect(assigns(:sports)).to eq([sport])
+      expect(assigns(:sports)).to eq([default_sport, sport])
     end
   end
 
@@ -103,14 +107,18 @@ RSpec.describe SportsController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        valid_attributes
       }
 
       it "updates the requested sport" do
         sport = Sport.create! valid_attributes
-        put :update, {:id => sport.to_param, :sport => new_attributes}, valid_session
-        sport.reload
-        skip("Add assertions for updated state")
+        # params = new_attributes
+        # put :update, {:id => sport.to_param, :sport => params}, valid_session
+        # sport.reload
+
+        expect{put :update, {:id => sport.to_param, :sport => new_attributes}, valid_session}.to change(Sport, :count).by(1-1)#one element had created
+        # expect{sport.name}.to eq(params[:name])
+        # expect{sport.uid}.to eq(params[:uid])
       end
 
       it "assigns the requested sport as @sport" do
@@ -122,6 +130,7 @@ RSpec.describe SportsController, :type => :controller do
       it "redirects to the sport" do
         sport = Sport.create! valid_attributes
         put :update, {:id => sport.to_param, :sport => valid_attributes}, valid_session
+        sport.reload
         expect(response).to redirect_to(sport)
       end
     end

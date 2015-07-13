@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :sport do
-    name "MyString"
-uid "MyString"
-description "MyText"
+    name "name"
+    uid "uid"
+    description "MyText"
   end
-
 end

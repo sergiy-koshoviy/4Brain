@@ -1,6 +1,10 @@
 class AddWeightliftingDateToAthleteCategory < ActiveRecord::Migration
   def change
     sport = Sport.find_by_name('weightlifting')
+    unless sport
+      sport = Sport.create!(name: 'weightlifting')
+    end
+
     AthleteCategory.connection.execute(
       "INSERT INTO athlete_categories (name, sport_id, created_at, updated_at) VALUES ('3 junior', #{sport.id}, DATE(NOW()), DATE(NOW()))"
     )
