@@ -39,6 +39,21 @@ function selectCompetition() {
           id: id
         },
         success: function(e){
+          $('#weightlifting-weighing').dataTable( {
+            "scrollY":        "300px",
+            "scrollCollapse": true,
+            "paging":         false,
+            ordering:  false,
+            compact: false
+          } );
+
+          $('#weightlifting-competitions').dataTable( {
+            "scrollY":        "300px",
+            "scrollCollapse": true,
+            "paging":         false,
+            ordering:  false,
+            compact: false
+          } );
         },
         error:  function(e){
         }
@@ -49,20 +64,6 @@ function selectCompetition() {
       $('.protocol-weighing-container').addClass('hide');
       $('.protocol-competitions-container').addClass('hide');
     }
-
-
-    $('#weightlifting-weighing').dataTable( {
-      "scrollY":        "100px",
-      "scrollCollapse": true,
-      "paging":         false
-    } );
-
-    $('#weightlifting-competitions').dataTable( {
-      "scrollY":        "100px",
-      "scrollCollapse": true,
-      "paging":         false
-    } );
-
   });
 }
 

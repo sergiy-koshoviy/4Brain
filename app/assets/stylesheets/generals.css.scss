@@ -97,3 +97,13 @@ ul.list_category {
     }
   }
 }
+
+table.dataTable thead {
+  th {
+    border: none !important;
+  }
+}
+
+table.without-border {
+  border-style: none;
+}
